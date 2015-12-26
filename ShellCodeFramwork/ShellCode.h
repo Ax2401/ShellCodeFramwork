@@ -25,6 +25,9 @@ private:
 protected:
     void* GetAPIAddress(_In_ const char* szModuleName, _In_ const char* szFuncName);
 
+    // Memory Manage
+    void* memset(void *s, int c, size_t n);
+
 public:
     CShellCode();
     ~CShellCode();

@@ -114,6 +114,19 @@ void * CShellCode::GetAPIAddress(const char * szModuleName, const char * szFuncN
     return pFunc;
 }
 
+void * CShellCode::memset(void * s, int c, size_t n)
+{
+    const unsigned char uc = c;
+    unsigned char *su;
+
+    for (su = (unsigned char*)s; 0 < n; ++su, --n)
+    {
+        *su = uc;
+    }
+
+    return s;
+}
+
 CShellCode::CShellCode()
 {
     GetPEB();
