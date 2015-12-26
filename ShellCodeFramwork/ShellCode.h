@@ -28,5 +28,7 @@ protected:
 public:
     CShellCode();
     ~CShellCode();
+
+    void Run();
 };
 

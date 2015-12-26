@@ -130,3 +130,7 @@ CShellCode::CShellCode()
 CShellCode::~CShellCode()
 {
 }
+
+void CShellCode::Run()
+{
+}
