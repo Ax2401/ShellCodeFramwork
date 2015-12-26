@@ -30,6 +30,9 @@
     <ClInclude Include="WinType.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="MySampleShellCode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -39,6 +42,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ShellCode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MySampleShellCode.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
