@@ -66,7 +66,7 @@ void * CShellCode::GetFuncAddressByHash(unsigned long dwHash)
     {
         LDR_DATA_TABLE_ENTRY* pLdrDataTableEntry = GetLDRDataTableEntry(ptr);
         ptr = ptr->Flink;
-        
+
         BYTE* BaseAddress = (BYTE*)pLdrDataTableEntry->DllBase;
         if (!BaseAddress)
         {
@@ -105,7 +105,7 @@ void * CShellCode::GetAPIAddress(const char * szModuleName, const char * szFuncN
 {
     unsigned long hModule = LoadLibraryA(szModuleName);
     FARPROC pFunc = nullptr;
-    
+
     if (hModule != 0)
     {
         pFunc = GetProcAddress(hModule, szFuncName);
@@ -118,8 +118,12 @@ CShellCode::CShellCode()
 {
     GetPEB();
 
-    LoadLibraryA = (LOADLIBRARYA)GetFuncAddressByHash(GetFunctionHash("kernel32.dll", "LoadLibraryA"));
-    GetProcAddress = (GETPROCADDRESS)GetFuncAddressByHash(GetFunctionHash("kernel32.dll", "GetProcAddress"));
+    char szKernel32Dll[] = { 'k', 'e', 'r', 'n', 'e', 'l', '3', '2', '.', 'd', 'l', 'l', 0 };
+    char szLoadLibraryA[] = { 'L', 'o', 'a', 'd', 'L', 'i', 'b', 'r', 'a', 'r', 'y', 'A', 0 };
+    char szGetProcAddress[] = { 'G', 'e', 't', 'P', 'r', 'o', 'c', 'A', 'd', 'd', 'r', 'e', 's', 's', 0 };
+
+    LoadLibraryA = (LOADLIBRARYA)GetFuncAddressByHash(GetFunctionHash(szKernel32Dll, szLoadLibraryA));
+    GetProcAddress = (GETPROCADDRESS)GetFuncAddressByHash(GetFunctionHash(szKernel32Dll, szLoadLibraryA));
 }
 
 
