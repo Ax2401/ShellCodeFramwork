@@ -2,10 +2,13 @@
 //
 
 #include "stdafx.h"
-
+#include "MySampleShellCode.h"
 
 int main()
 {
+    CMySampleShellCode a;
+    a.Run();
+
     return 0;
 }
 

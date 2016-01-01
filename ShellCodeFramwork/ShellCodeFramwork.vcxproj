@@ -146,6 +146,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MySampleShellCode.h" />
+    <ClInclude Include="MyWinsock.h" />
     <ClInclude Include="ShellCode.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
