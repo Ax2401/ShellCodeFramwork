@@ -136,7 +136,7 @@ CShellCode::CShellCode()
     char szGetProcAddress[] = { 'G', 'e', 't', 'P', 'r', 'o', 'c', 'A', 'd', 'd', 'r', 'e', 's', 's', 0 };
 
     LoadLibraryA = (LOADLIBRARYA)GetFuncAddressByHash(GetFunctionHash(szKernel32Dll, szLoadLibraryA));
-    GetProcAddress = (GETPROCADDRESS)GetFuncAddressByHash(GetFunctionHash(szKernel32Dll, szLoadLibraryA));
+    GetProcAddress = (GETPROCADDRESS)GetFuncAddressByHash(GetFunctionHash(szKernel32Dll, szGetProcAddress));
 }
 
 
